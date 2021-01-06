@@ -11,25 +11,11 @@ namespace WTFSelections
         public static List<int> OrderItemSkus { get; set; }
         public static int OrderUpateAttempts { get; set; }
 
-
-
-
-
-
-        //////public static SQLiteDataService MySQLite { get; } = new SQLiteDataService();
-        //////public static VersionService V { get; } = new VersionService(new MockRemoteDataService());
-        //////public static ObservableCollection<Grocery> Groceries { get; set; }
-        //////public static Dictionary<int, Kind> IngredientScratchList { get; set; }
-
-
         public static bool PageIsLoading { get; set; }
 
         public App()
         {
-            //////CompareVersion();
-
             InitializeComponent();
-
 
             InventoryRepo = new ObservableCollection<Inventory>() 
             {
@@ -61,23 +47,6 @@ namespace WTFSelections
             MainPage = new NavigationPage(new HomePage());
 
         }
-
-
-        //////public void CompareVersion()
-        //////{
-        //////    if (!V.DbIsUpdated) // Install SQLites Groceries catalog
-        //////    {
-        //////        var createTable = Task.Run(() => MySQLite.CreateTableOfGroceriesAsync());
-        //////        createTable.Wait();
-
-        //////        var populateTableFromJson = Task.Run(() => MySQLite.PopulateTableOfGroceriesAsync(V.ShippedCatalog));
-        //////        populateTableFromJson.Wait();
-
-        //////        V.UpdateVersion();
-
-        //////    }
-
-        //////}
 
     }
 }
